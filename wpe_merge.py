@@ -37,7 +37,7 @@ def make_request(account_id):
         logger.error("Unable to get data for account id '%s'. Error returned was '%s'" % (account_id, e))
         return {}
 
-    return json.loads(resp.read())
+    return json.loads(resp.read().decode('utf-8'))
 
 def get_data_from_api(data):
     output_data = []
